@@ -26,9 +26,9 @@ class PdoSqlsrv extends Pdo
      */
     public function numRows() : int
     {
-        $rowCount = $this->rowCount;
+        $rowCount = $this->_rowCount;
         if ($rowCount === false) {
-            $rowCount = $this->pdoStatement->rowCount();
+            $rowCount = $this->_pdoStatement->rowCount();
 
             if ($rowCount === false) {
                 parent::numRows();
